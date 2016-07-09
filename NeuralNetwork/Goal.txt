@@ -1,0 +1,41 @@
+﻿#Adaline.
+
+Adaline a = new Adaline(10);
+
+DataSet d = new DataSet((double[][])input, (double[])output)
+TrainSet t = new BasicTrainSet(d);
+
+while(a.Error > 0.2)
+{
+	a.Train(t);
+}
+
+int epoch = t.Epoch;
+double[] out = a.Compute((double[])inputExample);
+
+foreach(DataPair p in d)
+{
+	if(p.Output == a.Compute(p.Input))
+		Console.WriteLine("No problem");
+}
+
+#Backpropagation
+
+Backpropagation p = new Backpropagation();
+p.AddLayer(new BasicLayer(10));
+p.AddLayer(new BasicLayer(10)); //Last layer will be output layer
+
+class neuron 
+{
+ func backpropagation(output : Double, input : Array<Double>, ExpectedOUtput: Double, WeightValue : Array<Double>, Learnrate : Double, momentum : Double) -> Array<Double>
+{
+ var numc : Int = 0
+ var delta_i = WeightValue 
+ let rout = realoutput(input, WeightValue: WeightValue) 
+ let theta = rout * (1 - rout) * (ExpectedOUtput - rout) 
+ for delta in input 
+ {
+  let propagate = (Learnrate * theta * delta) + delta_i[numc] delta_i[numc] = propagate numc++ 
+ } return delta_i
+}
+func sigmoid(input : Double) -> Double { return (1 / (1 + exp( -1 * input))) } func realoutput(input : Array<Double>, WeightValue : Array<Double>) -> Double { var out : Double = 0 var num : Int = 0 for sum in input { out = (out + (WeightValue[num] * sum)) num++ } return sigmoid(out) } }

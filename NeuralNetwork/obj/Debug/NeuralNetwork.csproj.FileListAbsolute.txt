@@ -1,0 +1,15 @@
+D:\C#\AI\Perceptron\bin\Debug\NeuralNetwork.exe.config
+D:\C#\AI\Perceptron\obj\Debug\NeuralNetwork.csprojResolveAssemblyReference.cache
+D:\C#\AI\Perceptron\obj\Debug\NeuralNetwork.Properties.Resources.resources
+D:\C#\AI\Perceptron\obj\Debug\NeuralNetwork.csproj.GenerateResource.Cache
+D:\C#\AI\Perceptron\bin\Debug\NeuralNetwork.exe
+D:\C#\AI\Perceptron\bin\Debug\NeuralNetwork.pdb
+D:\C#\AI\Perceptron\obj\Debug\NeuralNetwork.exe
+D:\C#\AI\Perceptron\obj\Debug\NeuralNetwork.pdb
+D:\C#\AI\NeuralNetwork\bin\Debug\NeuralNetwork.exe.config
+D:\C#\AI\NeuralNetwork\bin\Debug\NeuralNetwork.exe
+D:\C#\AI\NeuralNetwork\bin\Debug\NeuralNetwork.pdb
+D:\C#\AI\NeuralNetwork\obj\Debug\NeuralNetwork.Properties.Resources.resources
+D:\C#\AI\NeuralNetwork\obj\Debug\NeuralNetwork.csproj.GenerateResource.Cache
+D:\C#\AI\NeuralNetwork\obj\Debug\NeuralNetwork.exe
+D:\C#\AI\NeuralNetwork\obj\Debug\NeuralNetwork.pdb
