@@ -7,10 +7,20 @@ namespace NeuralNetwork.Networks.Perceptron
     public class Adaline
     {
         private int _layer;
+        /// <summary>
+        /// 레이어의 뉴럴 개수
+        /// </summary>
         public int Layer { get { return _layer; } }
         private int _epoch;
+        /// <summary>
+        /// 학습시킨 수
+        /// </summary>
         public int Epoch { get { return _epoch; } }
+
         private double _error;
+        /// <summary>
+        /// 마지막 학습시켰을 때 계산된 오차율
+        /// </summary>
         public double Error { get { return _error; } }
 
         private double[] _weights;
@@ -23,6 +33,9 @@ namespace NeuralNetwork.Networks.Perceptron
             Reset();
         }
 
+        /// <summary>
+        /// 가중치 초기화
+        /// </summary>
         public void Reset()
         {
             Random r = new Random();
@@ -32,6 +45,11 @@ namespace NeuralNetwork.Networks.Perceptron
             _error = 1;
         }
 
+        /// <summary>
+        /// 학습을 시켜 가중치의 값을 조정합니다.
+        /// </summary>
+        /// <param name="trainset">학습을 학습 데이터</param>
+        /// <param name="learnRate">학습률</param>
         public void Train(BasicTrainSet<double> trainset, double learnRate = 0.3)
         {
             _error = 0;
@@ -39,7 +57,7 @@ namespace NeuralNetwork.Networks.Perceptron
             for (int p = 0; p < trainset.DataCount; p++)
             {
                 double result = Compute(trainset.Input[p], false);
-                double error = derivative(result) * (trainset.Output[p] - result);
+                double error = Sigmoid.Derivative(result) * (trainset.Output[p] - result);
 
                 for (int i = 0; i < _weights.Length; i++)
                 {
@@ -48,23 +66,20 @@ namespace NeuralNetwork.Networks.Perceptron
                 _biasWeight += error * learnRate;
                 _error += Math.Abs(error);
             }
-            if(_epoch % 100 == 0) Console.WriteLine($"epoch : {Epoch} error : {_error}");
         }
 
+        /// <summary>
+        /// 입력에 대한 출력값을 계산합니다.
+        /// </summary>
+        /// <param name="input">입력값</param>
+        /// <param name="quan">양자화 여부</param>
+        /// <returns>출력값</returns>
         public double Compute(double[] input, bool quan)
         {
-            double result = sigmoid(_weights.Zip(input, (a, b) => (a * b)).Sum() + _biasWeight);
+            double result = Sigmoid.LogSigmoid(_weights.Zip(input, (a, b) => (a * b)).Sum() + _biasWeight);
             return quan ? (result >= 0.5 ? 1 : 0) : result;
         }
 
-        private static double sigmoid(double x)
-        {
-            return 1.0 / (1.0 + Math.Exp(-x));
-        }
-
-        private static double derivative(double x)
-        {
-            return x * (1 - x);
-        }
+        
     }
 }

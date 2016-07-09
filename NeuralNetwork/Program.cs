@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using NeuralNetwork.Networks.Datas;
 using NeuralNetwork.Networks.Trains;
 using NeuralNetwork.Networks.Perceptron;
@@ -13,6 +12,7 @@ namespace NeuralNetwork
             TrainAndGate();
             Console.ReadLine();
         }
+
         private static void TrainAndGate()
         {
             Console.WriteLine("Starting train AND gate...");

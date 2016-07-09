@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Networks\Datas\DataSet.cs" />
     <Compile Include="Networks\Perceptron\Adaline.cs" />
+    <Compile Include="Networks\Perceptron\Backpropagation.cs" />
+    <Compile Include="Networks\Sigmoid.cs" />
     <Compile Include="Networks\Trains\BasicTrainSet.cs" />
     <Compile Include="Networks\Trains\TrainSet.cs" />
     <Compile Include="Program.cs" />
