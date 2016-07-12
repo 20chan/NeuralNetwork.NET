@@ -42,7 +42,7 @@ namespace NeuralNetwork.Networks.Perceptron
             for (int i = 0; i < _layer; i++)
                 _weights[i] = r.NextDouble() - 0.5;
             _biasWeight = r.NextDouble() - 0.5;
-            _error = 1;
+            _error = double.MaxValue;
         }
 
         /// <summary>
@@ -80,6 +80,9 @@ namespace NeuralNetwork.Networks.Perceptron
             return quan ? (result >= 0.5 ? 1 : 0) : result;
         }
 
-        
+        public void Debug()
+        {
+            Console.WriteLine($"Epoch : {Epoch} Error : {Error}");
+        }
     }
 }
