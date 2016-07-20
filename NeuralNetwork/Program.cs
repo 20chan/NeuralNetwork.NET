@@ -36,10 +36,10 @@ namespace NeuralNetwork
             DataSet<double> data = new DataSet<double>(inputs, outputs);
             BasicTrainSet<double> train = new BasicTrainSet<double>(data);
 
-            while (ada.Epoch < 2000 && ada.Error > 0.2)
+            while (ada.Error > 0.01)
             {
                 ada.Train(train, 0.5);
-                ada.Debug();
+                if(ada.Epoch % 10 == 0) ada.Debug();
             }
             Console.WriteLine();
             Console.WriteLine("Training Finished");

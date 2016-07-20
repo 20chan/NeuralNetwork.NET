@@ -185,6 +185,8 @@ namespace NeuralNetwork.Networks.Perceptron
             }
         }
 
+
+
         public double[][] ErrorFeedback(Layer layer)
         {
             double[][] result = new double[Count][];

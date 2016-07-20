@@ -50,7 +50,7 @@ namespace NeuralNetwork.Networks.Perceptron
         /// </summary>
         /// <param name="trainset">학습을 학습 데이터</param>
         /// <param name="learnRate">학습률</param>
-        public void Train(BasicTrainSet<double> trainset, double learnRate = 0.3)
+        public void Train(BasicTrainSet<double> trainset, double learnRate = 0.03)
         {
             _error = 0;
             _epoch++;
